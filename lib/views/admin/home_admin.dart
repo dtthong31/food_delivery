@@ -25,8 +25,9 @@ class _HomeAdminScreenState extends State<HomeAdminScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.logout),
-            onPressed: () {
-              _authController.signOut();
+            onPressed: () async {
+              await _authController.signOut();
+              Navigator.pushReplacementNamed(context, '/login');
             },
           ),
         ],
